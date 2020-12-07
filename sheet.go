@@ -155,7 +155,7 @@ func (f *File) workSheetWriter() {
 	for p, sheet := range f.Sheet {
 		if sheet != nil {
 			for k, v := range sheet.SheetData.Row {
-				f.Sheet[p].SheetData.Row[k].C = trimCell(v.C)
+				f.Sheet[p].SheetData.Row[k].C = v.C
 			}
 			// reusing buffer
 			_ = encoder.Encode(sheet)
